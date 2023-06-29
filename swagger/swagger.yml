@@ -1,0 +1,970 @@
+openapi: 3.0.0
+info:
+  title: Lunar
+  version: 1.0.0
+servers:
+  - url: http://localhost:3000
+paths:
+  /vehicles:
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/vehicles
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/vehicles?fields.vehicle_class=ClasseDeVéhicule&fields.pilots=Pilote1
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.vehicle_class
+          in: query
+          schema:
+            type: string
+          example: ClasseDeVéhicule
+        - name: fields.pilots
+          in: query
+          schema:
+            type: string
+          example: Pilote1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /starships:
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/starships
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/starships?fields.hyperdrive_rating=ValeurHyperdrive&fields.MGLT=ValeurMGLT&fields.starship_class=ClasseDeVaisseau&fields.pilots=Pilote1
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.hyperdrive_rating
+          in: query
+          schema:
+            type: string
+          example: ValeurHyperdrive
+        - name: fields.MGLT
+          in: query
+          schema:
+            type: string
+          example: ValeurMGLT
+        - name: fields.starship_class
+          in: query
+          schema:
+            type: string
+          example: ClasseDeVaisseau
+        - name: fields.pilots
+          in: query
+          schema:
+            type: string
+          example: Pilote1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /species:
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/species
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/species?fields.name=NomDeL'espèce&fields.classification=Classification&fields.designation=Designation&fields.average_height=HauteurMoyenne&fields.skin_colors=CouleursDePeau&fields.hair_colors=CouleursDesCheveux&fields.eye_colors=Coul
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.name
+          in: query
+          schema:
+            type: string
+          example: NomDeL'espèce
+        - name: fields.classification
+          in: query
+          schema:
+            type: string
+          example: Classification
+        - name: fields.designation
+          in: query
+          schema:
+            type: string
+          example: Designation
+        - name: fields.average_height
+          in: query
+          schema:
+            type: string
+          example: HauteurMoyenne
+        - name: fields.skin_colors
+          in: query
+          schema:
+            type: string
+          example: CouleursDePeau
+        - name: fields.hair_colors
+          in: query
+          schema:
+            type: string
+          example: CouleursDesCheveux
+        - name: fields.eye_colors
+          in: query
+          schema:
+            type: string
+          example: CouleursDesYeux
+        - name: fields.average_lifespan
+          in: query
+          schema:
+            type: string
+          example: DuréeDeVieMoyenne
+        - name: fields.homeworld
+          in: query
+          schema:
+            type: string
+          example: MondeNatal
+        - name: fields.language
+          in: query
+          schema:
+            type: string
+          example: Langue
+        - name: fields.people
+          in: query
+          schema:
+            type: string
+          example: Personne1
+        - name: fields.films
+          in: query
+          schema:
+            type: string
+          example: |
+            Film1
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /planets:
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/planets
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/planets?fields.name=NomDeLaPlanète&fields.rotation_period=PériodeDeRotation&fields.orbital_period=PériodeOrbitale&fields.diameter=Diamètre&fields.climate=Climat&field.gravity=Gravité&fields.terrain=Terrain&fields.surface_water=EauDeS
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.name
+          in: query
+          schema:
+            type: string
+          example: NomDeLaPlanète
+        - name: fields.rotation_period
+          in: query
+          schema:
+            type: string
+          example: PériodeDeRotation
+        - name: fields.orbital_period
+          in: query
+          schema:
+            type: string
+          example: PériodeOrbitale
+        - name: fields.diameter
+          in: query
+          schema:
+            type: string
+          example: Diamètre
+        - name: fields.climate
+          in: query
+          schema:
+            type: string
+          example: Climat
+        - name: field.gravity
+          in: query
+          schema:
+            type: string
+          example: Gravité
+        - name: fields.terrain
+          in: query
+          schema:
+            type: string
+          example: Terrain
+        - name: fields.surface_water
+          in: query
+          schema:
+            type: string
+          example: EauDeSurface
+        - name: fields.population
+          in: query
+          schema:
+            type: string
+          example: Population
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /films:
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/films
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/films?fields.title=Un Nouvel
+        Espoir&fields.episode_id=4&fields.opening_crawl=Il était une fois dans
+        une galaxie lointaine...&fields.director=George
+        Lucas&fields.producer=Gary Kurtz, Rick
+        McCallum&fields.release_date=1977-05-25&fields
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.title
+          in: query
+          schema:
+            type: string
+          example: Un Nouvel Espoir
+        - name: fields.episode_id
+          in: query
+          schema:
+            type: integer
+          example: '4'
+        - name: fields.opening_crawl
+          in: query
+          schema:
+            type: string
+          example: Il était une fois dans une galaxie lointaine...
+        - name: fields.director
+          in: query
+          schema:
+            type: string
+          example: George Lucas
+        - name: fields.producer
+          in: query
+          schema:
+            type: string
+          example: Gary Kurtz, Rick McCallum
+        - name: fields.release_date
+          in: query
+          schema:
+            type: string
+          example: '1977-05-25'
+        - name: fields.characters
+          in: query
+          schema:
+            type: string
+          example: Personnage1
+        - name: fields.planets
+          in: query
+          schema:
+            type: string
+          example: Planète1
+        - name: fields.starships
+          in: query
+          schema:
+            type: string
+          example: Starship1
+        - name: fields.vehicles
+          in: query
+          schema:
+            type: string
+          example: Vehicle1
+        - name: fields.species
+          in: query
+          schema:
+            type: string
+          example: Species1
+        - name: fields.created
+          in: query
+          schema:
+            type: string
+          example: '1977-05-25T00:00:00Z'
+        - name: fields.edited
+          in: query
+          schema:
+            type: string
+          example: |
+            2023-06-29T00:00:00Z
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /peoples:
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/peoples
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    post:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/peoples?fields.edited=2023-05-25T00:00:00Z&fields.name=Luke
+        Skywalker&fields.created=1977-05-25T00:00:00Z&fields.gender=Male&fields.skin_color=Fair&fields.hair_color=Blond&fields.height=172&fields.eye_color=Blue&fields.mass=77&fields
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.edited
+          in: query
+          schema:
+            type: string
+          example: '2023-05-25T00:00:00Z'
+        - name: fields.name
+          in: query
+          schema:
+            type: string
+          example: Luke Skywalker
+        - name: fields.created
+          in: query
+          schema:
+            type: string
+          example: '1977-05-25T00:00:00Z'
+        - name: fields.gender
+          in: query
+          schema:
+            type: string
+          example: Male
+        - name: fields.skin_color
+          in: query
+          schema:
+            type: string
+          example: Fair
+        - name: fields.hair_color
+          in: query
+          schema:
+            type: string
+          example: Blond
+        - name: fields.height
+          in: query
+          schema:
+            type: integer
+          example: '172'
+        - name: fields.eye_color
+          in: query
+          schema:
+            type: string
+          example: Blue
+        - name: fields.mass
+          in: query
+          schema:
+            type: integer
+          example: '77'
+        - name: fields.homeworld
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: fields.birth_year
+          in: query
+          schema:
+            type: string
+          example: 19BBY
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /peoples/{id}:
+    delete:
+      tags:
+        - default
+      summary: http://localhost:3000/peoples/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/peoples/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/peoples/649d69bf18822cb40043ca92?fields.edited=2023-05-25T00:00:00Z&fields.name=Luke
+        Skywalker&fields.created=1977-05-25T00:00:00Z&fields.gender=Male&fields.skin_color=Fair&fields.hair_color=Blond&fields.height=172&fields.eye_color=B
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.edited
+          in: query
+          schema:
+            type: string
+          example: '2023-05-25T00:00:00Z'
+        - name: fields.name
+          in: query
+          schema:
+            type: string
+          example: Luke Skywalker
+        - name: fields.created
+          in: query
+          schema:
+            type: string
+          example: '1977-05-25T00:00:00Z'
+        - name: fields.gender
+          in: query
+          schema:
+            type: string
+          example: Male
+        - name: fields.skin_color
+          in: query
+          schema:
+            type: string
+          example: Fair
+        - name: fields.hair_color
+          in: query
+          schema:
+            type: string
+          example: Blond
+        - name: fields.height
+          in: query
+          schema:
+            type: integer
+          example: '172'
+        - name: fields.eye_color
+          in: query
+          schema:
+            type: string
+          example: Blue
+        - name: fields.mass
+          in: query
+          schema:
+            type: integer
+          example: '77'
+        - name: fields.homeworld
+          in: query
+          schema:
+            type: integer
+          example: '1'
+        - name: fields.birth_year
+          in: query
+          schema:
+            type: string
+          example: 19BBY
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /vehicles/{id}:
+    delete:
+      tags:
+        - default
+      summary: http://localhost:3000/vehicles/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/vehicles/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/vehicles/{id}?fields.vehicle_class=ClasseDeVéhicule&fields.pilots=Pilote1
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.vehicle_class
+          in: query
+          schema:
+            type: string
+          example: ClasseDeVéhicule
+        - name: fields.pilots
+          in: query
+          schema:
+            type: string
+          example: Pilote1
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /species/{id}:
+    delete:
+      tags:
+        - default
+      summary: http://localhost:3000/species/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/species/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/species/{id}?field.name=NomDeL'espèce&field.classification=Classification&field.designation=Designation&field.average_height=HauteurMoyenne&field.skin_colors=CouleursDePeau&field.hair_colors=CouleursDesCheveux&field.eye_colors=Couleu
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.name
+          in: query
+          schema:
+            type: string
+          example: NomDeL'espèce
+        - name: fields.classification
+          in: query
+          schema:
+            type: string
+          example: Classification
+        - name: fields.designation
+          in: query
+          schema:
+            type: string
+          example: Designation
+        - name: fields.average_height
+          in: query
+          schema:
+            type: string
+          example: HauteurMoyenne
+        - name: fields.skin_colors
+          in: query
+          schema:
+            type: string
+          example: CouleursDePeau
+        - name: fields.hair_colors
+          in: query
+          schema:
+            type: string
+          example: CouleursDesCheveux
+        - name: fields.eye_colors
+          in: query
+          schema:
+            type: string
+          example: CouleursDesYeux
+        - name: fields.average_lifespan
+          in: query
+          schema:
+            type: string
+          example: DuréeDeVieMoyenne
+        - name: fields.homeworld
+          in: query
+          schema:
+            type: string
+          example: MondeNatal
+        - name: fields.language
+          in: query
+          schema:
+            type: string
+          example: Langue
+        - name: fields.people
+          in: query
+          schema:
+            type: string
+          example: Personne1
+        - name: fields.films
+          in: query
+          schema:
+            type: string
+          example: |
+            Film1
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /starships/{id}:
+    delete:
+      tags:
+        - default
+      summary: http://localhost:3000/starships/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/starships/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/starships/{id}?fields.hyperdrive_rating=ValeurHyperdrive&fields.MGLT=ValeurMGLT&fields.starship_class=ClasseDeVaisseau&fields.pilots=Pilote1
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.hyperdrive_rating
+          in: query
+          schema:
+            type: string
+          example: ValeurHyperdrive
+        - name: fields.MGLT
+          in: query
+          schema:
+            type: string
+          example: ValeurMGLT
+        - name: fields.starship_class
+          in: query
+          schema:
+            type: string
+          example: ClasseDeVaisseau
+        - name: fields.pilots
+          in: query
+          schema:
+            type: string
+          example: |
+            Pilote1
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /planets/{id}:
+    delete:
+      tags:
+        - default
+      summary: http://localhost:3000/planets/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/planets/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/planets/{id}?field.name=NomDeLaPlanète&field.rotation_period=PériodeDeRotation&field.orbital_period=PériodeOrbitale&field.diameter=Diamètre&field.climate=Climat&field.gravity=Gravité&field.terrain=Terrain&field.surface_water=EauDeSur
+      requestBody:
+        content: {}
+      parameters:
+        - name: fields.name
+          in: query
+          schema:
+            type: string
+          example: NomDeLaPlanète
+        - name: fields.rotation_period
+          in: query
+          schema:
+            type: string
+          example: PériodeDeRotation
+        - name: fields.orbital_period
+          in: query
+          schema:
+            type: string
+          example: PériodeOrbitale
+        - name: fields.diameter
+          in: query
+          schema:
+            type: string
+          example: Diamètre
+        - name: fields.climate
+          in: query
+          schema:
+            type: string
+          example: Climat
+        - name: field.gravity
+          in: query
+          schema:
+            type: string
+          example: Gravité
+        - name: fields.terrain
+          in: query
+          schema:
+            type: string
+          example: Terrain
+        - name: fields.surface_water
+          in: query
+          schema:
+            type: string
+          example: EauDeSurface
+        - name: fields.population
+          in: query
+          schema:
+            type: string
+          example: Population
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+  /films/{id}:
+    delete:
+      tags:
+        - default
+      summary: http://localhost:3000/film/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    get:
+      tags:
+        - default
+      summary: http://localhost:3000/films/{id}
+      parameters:
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
+    put:
+      tags:
+        - default
+      summary: >-
+        http://localhost:3000/films/{id}?fields.title=Un Nouvel
+        Espoir&fields.episode_id=4&fields.opening_crawl=Il était une fois dans
+        une galaxie lointaine...&fields.director=George
+        Lucas&fields.producer=Gary Kurtz, Rick
+        McCallum&fields.release_date=1977-05-25&f
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              example:
+                fields:
+                  title: ope
+      parameters:
+        - name: fields.title
+          in: query
+          schema:
+            type: string
+          example: Un Nouvel Espoir
+        - name: fields.episode_id
+          in: query
+          schema:
+            type: integer
+          example: '4'
+        - name: fields.opening_crawl
+          in: query
+          schema:
+            type: string
+          example: Il était une fois dans une galaxie lointaine...
+        - name: fields.director
+          in: query
+          schema:
+            type: string
+          example: George Lucas
+        - name: fields.producer
+          in: query
+          schema:
+            type: string
+          example: Gary Kurtz, Rick McCallum
+        - name: fields.release_date
+          in: query
+          schema:
+            type: string
+          example: '1977-05-25'
+        - name: fields.characters
+          in: query
+          schema:
+            type: string
+          example: Personnage1
+        - name: fields.planets
+          in: query
+          schema:
+            type: string
+          example: Planète1
+        - name: fields.starships
+          in: query
+          schema:
+            type: string
+          example: Starship1
+        - name: fields.vehicles
+          in: query
+          schema:
+            type: string
+          example: Vehicle1
+        - name: fields.species
+          in: query
+          schema:
+            type: string
+          example: Species1
+        - name: fields.created
+          in: query
+          schema:
+            type: string
+          example: '1977-05-25T00:00:00Z'
+        - name: fields.edited
+          in: query
+          schema:
+            type: string
+          example: |
+            2023-06-29T00:00:00Z
+        - name: id
+          in: path
+          schema:
+            type: string
+          required: true
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}
